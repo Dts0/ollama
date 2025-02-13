@@ -35,8 +35,8 @@ jobs:
     runs-on: ubuntu-latest #${{ matrix.arch == 'arm64' && format('{0}-{1}', matrix.os, matrix.arch) || matrix.os }}
     environment: release
     needs: setup-environment
-    env:
-      GOFLAGS: ${{ needs.setup-environment.outputs.GOFLAGS }}
+    # env:
+    #   GOFLAGS: ${{ needs.setup-environment.outputs.GOFLAGS }}
     steps:
       - uses: actions/checkout@v4
       - uses: docker/setup-buildx-action@v3
