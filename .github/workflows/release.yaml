@@ -32,10 +32,7 @@ jobs:
           - os: linux
             arch: amd64
             target: rocm
-          - os: linux
-            arch: arm64
-            target: archive
-    runs-on: ${{ matrix.arch == 'arm64' && format('{0}-{1}', matrix.os, matrix.arch) || matrix.os }}
+    runs-on: ubuntu-latest #${{ matrix.arch == 'arm64' && format('{0}-{1}', matrix.os, matrix.arch) || matrix.os }}
     environment: release
     needs: setup-environment
     env:
